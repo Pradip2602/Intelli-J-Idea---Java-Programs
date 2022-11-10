@@ -1,29 +1,32 @@
 import java.util.Scanner;
 
 public class Prime_Number {
-    public static boolean isPrime(int n) {
-        if (n <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) {
-                return false;
+   static void prime(int n){
+        int temp = 0;
+        if(n!=0){
+            for (int i = 2; i <=n-1 ; i++) {
+                if (n%i==0){
+                    temp++;
+                }
+            }
+            if(temp==0){
+                System.out.println(n+" is prime");
+//                System.out.println(n);
+            }else{
+                System.out.println(n+" is not prime");
             }
         }
-        return true;
     }
-
     public static void main(String[] args) {
+        // write code here......
         Scanner s = new Scanner(System.in);
-        System.out.print("Enter the first number : ");
-        int start = s.nextInt();
-        System.out.print("Enter the second number : ");
-        int end = s.nextInt();
-        System.out.println("List of prime numbers between " + start + " and " + end);
-        for (int i = start; i <= end; i++) {
-            if (isPrime(i)) {
-                System.out.println(i);
-            }
-        }
+        System.out.println("Enter the number : ");
+        int n = s.nextInt();
+        prime(n);
+
+//        for (int i = 2; i <200 ; i++) {
+//            prime(i);
+//        }
+
     }
 }
